@@ -8,6 +8,20 @@ window.addEventListener('DOMContentLoaded', function () {
     var formulario = document.getElementById('registroForm');
     var resultado = document.getElementById('resultado');
     formulario.addEventListener('submit', function (event) {
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellidoPaterno').value;
+        const regexSoloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+        if (!regexSoloLetras.test(nombre)) {
+            event.preventDefault();
+            alert('El nombre no debe contener números.');
+            return;
+        }
+        if (!regexSoloLetras.test(apellido)) {
+            event.preventDefault();
+            alert('El apellido paterno no debe contener números.');
+            return;
+        }
+
         event.preventDefault();
         var usuario = {
             nombre: document.getElementById('nombre').value.trim(),
