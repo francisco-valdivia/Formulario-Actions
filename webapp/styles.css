@@ -41,6 +41,17 @@ select {
     box-sizing: border-box;
 }
 
+optgroup {
+    font-weight: bold;
+    color: #0078d4;
+}
+
+optgroup option {
+    font-weight: normal;
+    color: #333;
+    padding-left: 10px;
+}
+
 button {
     width: 100%;
     padding: 10px;
