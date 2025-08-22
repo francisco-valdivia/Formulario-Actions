@@ -32,6 +32,13 @@ function inicializarFormulario() {
             alert('La dirección debe tener al menos 10 caracteres.');
             return;
         }
+        // Validar edad antes de obtener los valores
+        var edad = parseInt(document.getElementById('edad').value, 10);
+        if (!isNaN(edad) && edad >= 100) {
+            event.preventDefault();
+            alert('La edad debe ser menor a 100 años.');
+            return;
+        }
         event.preventDefault(); // Evita el envío tradicional
         // Obtención de valores de los campos
         var usuario = {

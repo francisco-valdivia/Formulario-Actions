@@ -49,6 +49,14 @@ function inicializarFormulario(): void {
             return;
         }
 
+        // Validar edad antes de obtener los valores
+        const edad = parseInt((document.getElementById('edad') as HTMLInputElement).value, 10);
+        if (!isNaN(edad) && edad >= 100) {
+            event.preventDefault();
+            alert('La edad debe ser menor a 100 años.');
+            return;
+        }
+
         event.preventDefault(); // Evita el envío tradicional
 
         // Obtención de valores de los campos
